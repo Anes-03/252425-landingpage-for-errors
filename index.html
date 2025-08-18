@@ -1,4 +1,130 @@
-<!DOCTYPE html>
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<style>
+								body {
+									background-color: white; /* Ensure the iframe has a white background */
+								}
+
+								
+/* ----------------------------------------------
+   Farb‑Variablen – light / dark
+   ---------------------------------------------- */
+:root{
+  /* Light‑Mode */
+  --bg-grad-start:#ffcc80;
+  --bg-grad-end:#ffab40;
+  --card-bg:#ffffff;
+  --card-border:#e0e0e0;
+  --text:#222;
+  --muted:#555;
+  --btn-grad-start:#ff8a65;
+  --btn-grad-end:#ff7043;
+  --btn-text:#fff;
+}
+
+/* Dark‑Mode */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg-grad-start:#2d2d2d;
+    --bg-grad-end:#3e3e3e;
+    --card-bg:#1c1c1c;
+    --card-border:#444;
+    --text:#e0e0e0;
+    --muted:#bbb;
+    --btn-grad-start:#ff7043;
+    --btn-grad-end:#ff5722;
+    --btn-text:#fff;
+  }
+}
+
+/* ----------------------------------------------
+   Body
+   ---------------------------------------------- */
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:linear-gradient(135deg, var(--bg-grad-start), var(--bg-grad-end));
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+
+/* ----------------------------------------------
+   Card
+   ---------------------------------------------- */
+.card{
+  max-width:620px;
+  width:100%;
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:14px;
+  padding:3rem 2.5rem;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  text-align:center;
+}
+
+/* ----------------------------------------------
+   Text
+   ---------------------------------------------- */
+h1{
+  font-size:2.3rem;
+  margin-bottom:0.9rem;
+  font-weight:600;
+}
+p{
+  font-size:1.1rem;
+  line-height:1.6;
+  margin:1.2rem 0;
+  color:var(--muted);
+}
+code{
+  background:#f0f0f0;
+  padding:0 4px;
+  border-radius:3px;
+}
+
+/* ----------------------------------------------
+   Buttons
+   ---------------------------------------------- */
+.btn{
+  display:inline-block;
+  margin:0.6rem;
+  padding:0.95rem 1.95rem;
+  font-size:1rem;
+  font-weight:600;
+  color:var(--btn-text);
+  background:linear-gradient(45deg, var(--btn-grad-start), var(--btn-grad-end));
+  text-decoration:none;
+  border-radius:8px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.15);
+  transition:background 0.25s ease, transform 0.15s ease;
+}
+.btn:hover{
+  background:linear-gradient(45deg, var(--btn-grad-end), var(--btn-grad-start));
+  transform:translateY(-2px);
+}
+
+/* ----------------------------------------------
+   Footer
+   ---------------------------------------------- */
+.footer{
+  margin-top:2.5rem;
+  font-size:0.9rem;
+  color:#777;
+}
+
+
+							</style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -6,77 +132,150 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* --------- Hintergrund‑Gradient ----------
-   Du kannst die Farben beliebig anpassen. --------- */
+/* ----------------------------------------------
+   Farb‑Variablen – light / dark
+   ---------------------------------------------- */
+:root{
+  /* Light‑Mode */
+  --bg-grad-start:#ffcc80;
+  --bg-grad-end:#ffab40;
+  --card-bg:#ffffff;
+  --card-border:#e0e0e0;
+  --text:#222;
+  --muted:#555;
+  --btn-grad-start:#ff8a65;
+  --btn-grad-end:#ff7043;
+  --btn-text:#fff;
+}
+
+/* Dark‑Mode */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg-grad-start:#2d2d2d;
+    --bg-grad-end:#3e3e3e;
+    --card-bg:#1c1c1c;
+    --card-border:#444;
+    --text:#e0e0e0;
+    --muted:#bbb;
+    --btn-grad-start:#ff7043;
+    --btn-grad-end:#ff5722;
+    --btn-text:#fff;
+  }
+}
+
+/* ----------------------------------------------
+   Body
+   ---------------------------------------------- */
 body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    color:#fff;
-    background: linear-gradient(135deg,#2c3e50,#4ca1af);
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:2rem;
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:linear-gradient(135deg, var(--bg-grad-start), var(--bg-grad-end));
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
 }
 
-.container{
-    max-width:700px;
-    background:rgba(0,0,0,0.25);
-    border-radius:12px;
-    padding:2rem 1.5rem;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+/* ----------------------------------------------
+   Card
+   ---------------------------------------------- */
+.card{
+  max-width:620px;
+  width:100%;
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:14px;
+  padding:3rem 2.5rem;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  text-align:center;
 }
 
+/* ----------------------------------------------
+   Text
+   ---------------------------------------------- */
 h1{
-    font-size:2.5rem;
-    margin-bottom:0.5rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  font-size:2.3rem;
+  margin-bottom:0.9rem;
+  font-weight:600;
 }
-
 p{
-    font-size:1.15rem;
-    line-height:1.6;
+  font-size:1.1rem;
+  line-height:1.6;
+  margin:1.2rem 0;
+  color:var(--muted);
+}
+code{
+  background:#f0f0f0;
+  padding:0 4px;
+  border-radius:3px;
 }
 
-a{
-    color:#ffeb3b;
-    text-decoration:none;
-    font-weight:bold;
+/* ----------------------------------------------
+   Buttons
+   ---------------------------------------------- */
+.btn{
+  display:inline-block;
+  margin:0.6rem;
+  padding:0.95rem 1.95rem;
+  font-size:1rem;
+  font-weight:600;
+  color:var(--btn-text);
+  background:linear-gradient(45deg, var(--btn-grad-start), var(--btn-grad-end));
+  text-decoration:none;
+  border-radius:8px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.15);
+  transition:background 0.25s ease, transform 0.15s ease;
 }
-a:hover{
-    text-decoration:underline;
+.btn:hover{
+  background:linear-gradient(45deg, var(--btn-grad-end), var(--btn-grad-start));
+  transform:translateY(-2px);
 }
 
+/* ----------------------------------------------
+   Footer
+   ---------------------------------------------- */
 .footer{
-    margin-top:2rem;
-    font-size:0.9rem;
-    opacity:0.8;
+  margin-top:2.5rem;
+  font-size:0.9rem;
+  color:#777;
 }
 </style>
 </head>
 
 <body>
-<div class="container">
-    <h1>🚀 Die KI‑Anwendung ist jetzt vereinfacht!</h1>
-    <p>
-        Von nun an erreichst du die neue Version ausschließlich über  
-        <a href="https://ai.252425.xyz/" target="_blank">https://ai.252425.xyz/</a>.
-    </p>
-    <p>
-        Solltest du noch auf die klassische Super‑AI-Version zugreifen müssen, nutze bitte  
-        <a href="https://superai-legacy.252425.xyz" target="_blank">superai-legacy.252425.xyz</a>.
-    </p>
-    <p>
-        Die ursprüngliche <strong>AI‑Anwendung</strong> findest du weiterhin unter  
-        <a href="https://ai-imac-legacy.252425.xyz" target="_blank">ai-imac-legacy.252425.xyz</a>.
-    </p>
+<div class="card">
+  <h1>🚀 KI‑Anwendung 252425 – Jetzt noch einfacher</h1>
 
-    <div class="footer">
-        <p>© 2025 252425. Alle Rechte vorbehalten.</p>
-    </div>
+  <p>
+    Von heute an erreichst du die neue Version ausschließlich über  
+    <a href="https://ai.252425.xyz/" target="_blank" class="btn">AI – Neue Adresse</a>
+  </p>
+
+  <p>
+    Benötigst du noch Zugriff auf die klassische Super‑AI? Dann besuche  
+    <a href="https://superai-legacy.252425.xyz" target="_blank" class="btn">SuperAI Legacy</a>
+  </p>
+
+  <p>
+    Die ursprüngliche AI‑Anwendung hat sich von <code>ai.252425.xyz</code> zu  
+    <code>ai-imac-legacy.252425.xyz</code> verschoben – sie ist weiterhin erreichbar über  
+    <a href="https://ai-imac-legacy.252425.xyz" target="_blank" class="btn">AI‑Legacy</a>
+  </p>
+
+  <div class="footer">
+    <p>© 2025 252425 Homelab Alle Rechte vorbehalten</p>
+  </div>
 </div>
 </body>
 </html>
+
+
+
+							<script>
+                            	
+							</script>
+                        </body>
+                        </html>
+                    
